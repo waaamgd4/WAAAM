@@ -13,7 +13,7 @@ Hidden Egypt: Discover the Unseen Treasures is a creative media campaign that us
 "Uncover the Soul of Egypt"
 
 
- Project Overview:
+# Project Overview:
 Hidden Egypt: Discover the Unseen Treasures is a creative media campaign that uses compelling graphic design and visual storytelling to spark interest in Egypt’s lesser-known destinations. While iconic landmarks dominate Egypt’s image, there are countless hidden treasures—historic towns, natural wonders, cultural enclaves—that remain unexplored. This campaign will bring these places to life through eye-catching visuals, thoughtful branding, and imaginative design work. By blending history, culture, and creativity, the campaign encourages locals to reconnect with the country’s diversity and heritage, while providing a fresh perspective on destinations often overlooked. Through consistent and impactful design, it aims to make these hidden gems stand out in the minds of travelers.
 
 
