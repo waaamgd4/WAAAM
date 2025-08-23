@@ -1,5 +1,5 @@
 #  Hidden Egypt: Discover the Unseen Treasures
-Exora is a digital platform that simplifies the export process from Egypt to global markets. The application connects international buyers with verified Egyptian suppliers of raw materials such as coal, marble, textiles, and food products. Instead of searching randomly on social media, buyers can easily browse a structured catalog, communicate directly with exporters, access secure payment methods, and benefit from integrated shipping solutions. Exora makes Egyptian exports more accessible, transparent, and efficient for the global trade community
+Hidden Egypt: Discover the Unseen Treasures is a creative media campaign that uses compelling graphic design and visual storytelling to spark interest in Egypt’s lesser-known destinations. While iconic landmarks dominate Egypt’s image, there are countless hidden treasures—historic towns, natural wonders, cultural enclaves—that remain unexplored. This campaign will bring these places to life through eye-catching visuals, thoughtful branding, and imaginative design work. By blending history, culture, and creativity, the campaign encourages locals to reconnect with the country’s diversity and heritage, while providing a fresh perspective on destinations often overlooked. Through consistent and impactful design, it aims to make these hidden gems stand out in the minds of travelers.
 
 
 # Other Suggested Slogans: 
@@ -12,8 +12,6 @@ Exora is a digital platform that simplifies the export process from Egypt to glo
 
 "Uncover the Soul of Egypt"
 
-# Project Idea
-Exora is an AI-powered export platform designed to connect global buyers with verified Egyptian suppliers of raw materials. The system makes the export process easier, faster, and more transparent by replacing scattered Facebook searches with a centralized and trusted solution.
 
  Project Overview:
 Hidden Egypt: Discover the Unseen Treasures is a creative media campaign that uses compelling graphic design and visual storytelling to spark interest in Egypt’s lesser-known destinations. While iconic landmarks dominate Egypt’s image, there are countless hidden treasures—historic towns, natural wonders, cultural enclaves—that remain unexplored. This campaign will bring these places to life through eye-catching visuals, thoughtful branding, and imaginative design work. By blending history, culture, and creativity, the campaign encourages locals to reconnect with the country’s diversity and heritage, while providing a fresh perspective on destinations often overlooked. Through consistent and impactful design, it aims to make these hidden gems stand out in the minds of travelers.
@@ -34,6 +32,7 @@ The objective of Hidden Egypt is to inspire exploration and increase awareness o
 
 - Strengthen the identity of domestic tourism by creating a unified visual language that connects travelers with lesser-known places.
 
+
 # Project Target
 1- Increase awareness of Egypt’s lesser-known destinations and highlight their unique beauty.
 
@@ -48,6 +47,7 @@ The objective of Hidden Egypt is to inspire exploration and increase awareness o
 6- Promote sustainable tourism by presenting responsible travel alternatives that respect the environment and future generations.
 
 7- Establish a scalable foundation for future campaigns covering historical, natural, and cultural destinations.
+
 
 # Team Members
 
