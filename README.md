@@ -1,4 +1,4 @@
-#  SAFE // Security and Awareness For Everyone
+#  SAFE - Security and Awareness For Everyone
 
 # Project Overview:
 SAFE is a non-profitable organization aimed to educate and empower individuals and businesses to protect themselves in an increasingly digital environment. As online activity grows in Egypt, so do the risks of cybercrimes, including fraud, identity theft, and cyberbullying. This organization uses creative graphic design, engaging content, and clear messaging to simplify complex cybersecurity concepts and raise awareness about the importance of safe online practices. It also touches on emerging challenges in the AI era, helping people understand how to safely navigate new technologies and tools. By highlighting key threats and how to respond to them, EDSA encourages a culture of vigilance and digital responsibility.
