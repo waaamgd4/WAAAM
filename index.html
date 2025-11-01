@@ -1,1 +1,1061 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAFE - Your Shield in the Digital World</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-dark: #1269B7;
+            --primary-medium: #1783e5;
+            --primary-light: #76bcf0;
+            --neutral-dark: #0d0f36;
+            --accent-orange: #f38023;
+            --light-bg: #f7f1ed;
+            --light-bg-section: #ebf1f9;
+            --light-bg-nav: rgba(247, 241, 237, 0.6);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: var(--light-bg);
+        }
+
+        /* RTL support */
+        [dir="rtl"] {
+            direction: rtl !important;
+            text-align: right !important;
+        }
+
+        [dir="ltr"] {
+            direction: ltr !important;
+            text-align: left !important;
+        }
+
+        .arabic-text {
+            font-family: 'Cairo', 'Droid Arabic Kufi', sans-serif !important;
+            direction: rtl !important;
+            text-align: right !important;
+            unicode-bidi: isolate !important;
+        }
+
+        /* Custom animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(to right, var(--primary-dark), var(--neutral-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-backdrop {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background-color: var(--light-bg-nav);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu.rtl {
+            transform: translateX(-100%);
+        }
+
+        .mobile-menu.rtl.open {
+            transform: translateX(0);
+        }
+
+        .card-hover {
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .logo-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.3s ease-out;
+        }
+
+        .logo-3d:hover {
+            transform: rotateY(15deg) rotateX(10deg);
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--neutral-dark);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px -5px rgba(18, 105, 183, 0.4);
+        }
+
+        .section-padding {
+            padding: 7rem 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Progress bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background-color: var(--primary-dark);
+            transform-origin: left;
+            z-index: 1000;
+        }
+
+        .scroll-progress.rtl {
+            transform-origin: right;
+        }
+
+        /* Campaign cards */
+        .campaign-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+            min-height: 400px;
+            cursor: pointer;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+        }
+
+        .campaign-card:hover {
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+        }
+
+        .campaign-image {
+            transition: transform 0.3s ease-out;
+        }
+
+        .campaign-card:hover .campaign-image {
+            transform: scale(1.05);
+        }
+
+        /* Brand kit cards */
+        .kit-card {
+            aspect-ratio: 4/5;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+            flex-shrink: 0;
+            width: 320px;
+        }
+
+        .kit-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Hidden class for elements that need to be shown with JS */
+        .js-hidden {
+            display: none;
+        }
+
+        /* Loading animation */
+        .loading-pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: .5;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 w-full nav-backdrop">
+        <nav class="container">
+            <div class="flex h-24 items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center gap-2" id="logo">
+                    <img src="images/icon.png" alt="SAFE Logo" width="32" height="36" class="object-contain">
+                    <span class="text-3xl font-extrabold tracking-tight" style="color: var(--neutral-dark); font-family: 'Montserrat', sans-serif;">SAFE</span>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex lg:items-center lg:gap-x-8">
+                    <button onclick="scrollToSection('home')" class="nav-link group relative rounded-md px-3 py-2 text-base font-semibold" style="color: var(--neutral-dark);">
+                        <span class="nav-text">Home</span>
+                        <span class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 ease-out group-hover:w-full" style="background-color: var(--primary-dark);"></span>
+                    </button>
+                    <button onclick="scrollToSection('about')" class="nav-link group relative rounded-md px-3 py-2 text-base font-semibold" style="color: var(--neutral-dark);">
+                        <span class="nav-text">About</span>
+                        <span class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 ease-out group-hover:w-full" style="background-color: var(--primary-dark);"></span>
+                    </button>
+                    <button onclick="scrollToSection('brand-kit')" class="nav-link group relative rounded-md px-3 py-2 text-base font-semibold" style="color: var(--neutral-dark);">
+                        <span class="nav-text">Brand Kit</span>
+                        <span class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 ease-out group-hover:w-full" style="background-color: var(--primary-dark);"></span>
+                    </button>
+                    <button onclick="scrollToSection('campaigns')" class="nav-link group relative rounded-md px-3 py-2 text-base font-semibold" style="color: var(--neutral-dark);">
+                        <span class="nav-text">Campaigns</span>
+                        <span class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 ease-out group-hover:w-full" style="background-color: var(--primary-dark);"></span>
+                    </button>
+                    <button onclick="scrollToSection('contact')" class="nav-link group relative rounded-md px-3 py-2 text-base font-semibold" style="color: var(--neutral-dark);">
+                        <span class="nav-text">Contact</span>
+                        <span class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 ease-out group-hover:w-full" style="background-color: var(--primary-dark);"></span>
+                    </button>
+                    <button onclick="toggleLanguage()" class="btn-primary flex items-center gap-2 text-sm">
+                        <i data-lucide="globe" class="w-4 h-4"></i>
+                        <span id="langToggle">عربي</span>
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="flex items-center lg:hidden">
+                    <button onclick="toggleMobileMenu()" class="inline-flex items-center justify-center rounded-md p-2" style="color: var(--neutral-dark);">
+                        <i data-lucide="menu" class="w-7 h-7"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-50 flex flex-col p-6 lg:hidden js-hidden" style="background-color: var(--light-bg);">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="images/icon.png" alt="SAFE Logo" width="32" height="36" class="object-contain">
+                <span class="text-3xl font-extrabold tracking-tight" style="color: var(--neutral-dark);">SAFE</span>
+            </div>
+            <button onclick="toggleMobileMenu()" class="rounded-md p-2" style="color: var(--neutral-dark);">
+                <i data-lucide="x" class="w-7 h-7"></i>
+            </button>
+        </div>
+        
+        <div class="mt-24 flex flex-col items-center gap-y-8">
+            <button onclick="scrollToSection('home'); toggleMobileMenu();" class="block w-full rounded-md py-3 text-center text-3xl font-semibold" style="color: var(--neutral-dark);">
+                <span class="mobile-nav-text">Home</span>
+            </button>
+            <button onclick="scrollToSection('about'); toggleMobileMenu();" class="block w-full rounded-md py-3 text-center text-3xl font-semibold" style="color: var(--neutral-dark);">
+                <span class="mobile-nav-text">About</span>
+            </button>
+            <button onclick="scrollToSection('brand-kit'); toggleMobileMenu();" class="block w-full rounded-md py-3 text-center text-3xl font-semibold" style="color: var(--neutral-dark);">
+                <span class="mobile-nav-text">Brand Kit</span>
+            </button>
+            <button onclick="scrollToSection('campaigns'); toggleMobileMenu();" class="block w-full rounded-md py-3 text-center text-3xl font-semibent" style="color: var(--neutral-dark);">
+                <span class="mobile-nav-text">Campaigns</span>
+            </button>
+            <button onclick="scrollToSection('contact'); toggleMobileMenu();" class="block w-full rounded-md py-3 text-center text-3xl font-semibold" style="color: var(--neutral-dark);">
+                <span class="mobile-nav-text">Contact</span>
+            </button>
+            <button onclick="toggleLanguage()" class="mt-10 btn-primary text-lg">
+                <i data-lucide="globe" class="w-5 h-5"></i>
+                <span id="mobileLangToggle">عربي</span>
+            </button>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative flex min-h-screen items-center overflow-hidden" style="background-color: var(--light-bg);">
+            <!-- Background Glow -->
+            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-96 rounded-full opacity-30 blur-3xl" style="background-color: var(--primary-light);"></div>
+
+            <div class="relative container pt-36 pb-20 lg:pt-0 lg:pb-0">
+                <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:items-center fade-in-up">
+                    <!-- Text Content -->
+                    <div class="text-left" id="heroContent">
+                        <h1 class="font-extrabold tracking-tight hero-gradient" style="font-size: clamp(3.5rem, 10vw, 5.5rem); line-height: 1.15;">
+                            <span id="heroSlogan">Your Shield in the Digital World.</span>
+                        </h1>
+                        <p class="mt-6 max-w-xl mx-auto lg:mx-0 text-lg md:text-xl" style="color: var(--neutral-dark); opacity: 0.8;" id="heroSubSlogan">
+                            Building a safe and aware digital Egyptian community that enjoys trust and knowledge to protect its data and identity.
+                        </p>
+                        <button onclick="scrollToSection('about')" class="btn-primary mt-10 text-lg">
+                            <span id="heroCta">Explore Our Mission</span>
+                            <i data-lucide="arrow-right" class="w-5 h-5" id="heroArrow"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- 3D Logo -->
+                    <div class="flex items-center justify-center h-96 lg:h-auto" id="heroLogo">
+                        <div class="logo-3d relative w-full max-w-md">
+                            <svg class="w-full" viewBox="-4 -4 40 44" style="filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1))">
+                                <path d="M16 0C7.163 0 0 3.103 0 10.286V23.143C0 27.524 3.582 31.06 8 33.22L14.4 35.8C15.36 36.16 16.64 36.16 17.6 35.8L24 33.22C28.418 31.06 32 27.524 32 23.143V10.286C32 3.103 24.837 0 16 0Z" fill="var(--primary-light)"/>
+                            </svg>
+                            <img src="images/icon.png" alt="SAFE Logo" class="absolute w-full h-full object-contain" style="top: 50%; left: 50%; transform: translate(-50%, -50%); filter: drop-shadow(0 5px 15px rgba(0,0,0,0.2)); max-width: 80%; max-height: 80%;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-padding overflow-hidden relative" style="background-color: var(--light-bg-section);">
+            <!-- Background Glow -->
+            <div class="absolute top-0 left-0 w-96 h-full opacity-20 blur-3xl" style="background-color: var(--primary-light); clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);"></div>
+
+            <div class="container relative z-10">
+                <!-- Purpose Section -->
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl" style="color: var(--neutral-dark);" id="purposeTitle">
+                        Our Purpose
+                    </h2>
+                    <p class="mt-5 text-xl" style="color: var(--neutral-dark); opacity: 0.7;" id="purposeSubTitle">
+                        Security & Awareness For Everyone. We are guided by a clear vision, mission, and values.
+                    </p>
+                </div>
+                
+                <!-- Vision & Mission Cards -->
+                <div class="mt-24 grid grid-cols-1 lg:grid-cols-2 gap-10">
+                    <div class="rounded-3xl p-8 lg:p-10 bg-white shadow-lg fade-in-up">
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full" style="background-color: var(--primary-medium); color: white;">
+                                <i data-lucide="target" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold" style="color: var(--primary-dark);" id="visionTitle">
+                                Our Vision
+                            </h3>
+                        </div>
+                        <p class="mt-4 text-lg" style="color: var(--neutral-dark); opacity: 0.9;" id="visionText">
+                            Building a safe and aware digital Egyptian community.
+                        </p>
+                    </div>
+                    
+                    <div class="rounded-3xl p-8 lg:p-10 bg-white shadow-lg fade-in-up">
+                        <div class="flex items-center gap-4">
+                            <div class="inline-flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full" style="background-color: var(--primary-medium); color: white;">
+                                <i data-lucide="check-circle" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-2xl font-semibold" style="color: var(--primary-dark);" id="missionTitle">
+                                Our Mission
+                            </h3>
+                        </div>
+                        <p class="mt-4 text-lg" style="color: var(--neutral-dark); opacity: 0.9;" id="missionText">
+                            Providing innovative, simple content to promote digital safety.
+                        </p>
+                    </div>
+
+                    <!-- Logo Story Section -->
+                    <div class="lg:col-span-2 mt-10 grid grid-cols-1 items-center gap-10 md:grid-cols-2 fade-in-up">
+                        <div class="flex items-center justify-center">
+                            <img src="images/concept.png" alt="Logo Concept Sketch" class="rounded-3xl shadow-xl">
+                        </div>
+                        <div id="logoStoryContent">
+                            <h3 class="text-3xl font-bold tracking-tight sm:text-4xl" style="color: var(--neutral-dark);" id="logoStoryTitle">
+                                The Story of Our Logo
+                            </h3>
+                            <p class="mt-6 text-lg" style="color: var(--neutral-dark); opacity: 0.9;" id="logoStoryText1">
+                                Our logo is a fusion of two core concepts: The 'Shield' represents Safety & Security, while the 'Lotus' (a symbol of Egypt) represents our nation.
+                            </p>
+                            <p class="mt-4 text-lg" style="color: var(--neutral-dark); opacity: 0.9;" id="logoStoryText2">
+                                Together, they form 'Secure Egypt' — or SAFE. It's a symbol of our commitment to protecting our community.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Brand Kit Section -->
+        <section id="brand-kit" class="section-padding overflow-hidden" style="background-color: var(--light-bg);">
+            <div class="container">
+                <div class="text-center max-w-3xl mx-auto fade-in-up">
+                    <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl" style="color: var(--neutral-dark);" id="kitTitle">
+                        Our Brand Kit
+                    </h2>
+                    <p class="mt-5 text-xl" style="color: var(--neutral-dark); opacity: 0.7;" id="kitSubTitle">
+                        Explore the official SAFE merchandise, designed for our community.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Kit Items -->
+            <div class="mt-20">
+                <div class="container">
+                    <div class="flex gap-6 overflow-x-auto py-4 scrollbar-hide" style="scroll-snap-type: x mandatory;">
+                        <div class="flex-shrink-0 w-4" aria-hidden="true"></div>
+                        
+                        <div class="kit-card relative group" style="scroll-snap-align: center;">
+                            <div class="absolute inset-0 rounded-3xl" style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 100%);"></div>
+                            <img src="images/office.jpg" alt="SAFE Notebook" class="absolute inset-0 h-full w-full object-cover rounded-3xl">
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/80 to-transparent opacity-80"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-center items-end">
+                                <h3 class="text-2xl font-bold text-white leading-tight text-center kit-item-name" data-en="SAFE Notebook" data-ar="أدوات مكتبية SAFE">
+                                    SAFE Notebook
+                                </h3>
+                            </div>
+                        </div>
+                        
+                        <div class="kit-card relative group" style="scroll-snap-align: center;">
+                            <div class="absolute inset-0 rounded-3xl" style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 100%);"></div>
+                            <img src="images/bag.jpg" alt="SAFE Tote Bag" class="absolute inset-0 h-full w-full object-cover rounded-3xl">
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/80 to-transparent opacity-80"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-center items-end">
+                                <h3 class="text-2xl font-bold text-white leading-tight text-center kit-item-name" data-en="SAFE Tote Bag" data-ar="حقيبة SAFE">
+                                    SAFE Tote Bag
+                                </h3>
+                            </div>
+                        </div>
+                        
+                        <div class="kit-card relative group" style="scroll-snap-align: center;">
+                            <div class="absolute inset-0 rounded-3xl" style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 100%);"></div>
+                            <img src="images/hoodie.jpg" alt="SAFE Mug" class="absolute inset-0 h-full w-full object-cover rounded-3xl">
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/80 to-transparent opacity-80"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-center items-end">
+                                <h3 class="text-2xl font-bold text-white leading-tight text-center kit-item-name" data-en="SAFE Mug" data-ar="كوب SAFE">
+                                    SAFE Mug
+                                </h3>
+                            </div>
+                        </div>
+                        
+                        <div class="kit-card relative group" style="scroll-snap-align: center;">
+                            <div class="absolute inset-0 rounded-3xl" style="background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-medium) 100%);"></div>
+                            <img src="images/merch.jpg" alt="SAFE Cap" class="absolute inset-0 h-full w-full object-cover rounded-3xl">
+                            <div class="absolute inset-0 rounded-3xl bg-gradient-to-t from-black/80 to-transparent opacity-80"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-6 flex justify-center items-end">
+                                <h3 class="text-2xl font-bold text-white leading-tight text-center kit-item-name" data-en="SAFE Cap" data-ar="قبعة SAFE">
+                                    SAFE Cap
+                                </h3>
+                            </div>
+                        </div>
+                        
+                        <div class="flex-shrink-0 w-4" aria-hidden="true"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Campaigns Section -->
+        <section id="campaigns" class="section-padding relative overflow-hidden" style="background-color: var(--light-bg);">
+            <!-- Background Glows -->
+            <div class="absolute top-1/4 left-0 w-96 h-96 opacity-20 blur-3xl rounded-full" style="background-color: var(--primary-light);"></div>
+            <div class="absolute bottom-1/4 right-0 w-64 h-64 opacity-15 blur-2xl rounded-full" style="background-color: var(--accent-orange);"></div>
+
+            <div class="container relative z-10">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto mb-20 fade-in-up">
+                    <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl" style="color: var(--neutral-dark);" id="campaignTitle">
+                        Our Latest Campaigns
+                    </h2>
+                    <p class="mt-5 text-xl" style="color: var(--neutral-dark); opacity: 0.7;" id="campaignSubTitle">
+                        Follow our awareness campaigns and stay informed.
+                    </p>
+                </div>
+
+                <!-- Campaign Cards -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="campaign-card fade-in-up" style="background-color: var(--neutral-dark);">
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 80%, var(--primary-light) 0%, transparent 50%);"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-between">
+                            <div class="flex justify-end">
+                                <div class="text-white text-sm font-bold px-3 py-1 rounded-full" style="background-color: rgba(255,255,255,0.2);">
+                                    SAFE
+                                </div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center my-8">
+                                <div class="relative w-full max-w-xs aspect-square">
+                                    <img src="images/camp1.jpg" alt="Campaign 1" class="campaign-image w-full h-full object-cover rounded-2xl shadow-lg">
+                                    <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(135deg, transparent 0%, rgba(13, 15, 54, 0.3) 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold text-white mb-4 campaign-title" data-en="Beware of online fraud" data-ar="احذر من الاحتيال الإلكتروني">
+                                    احذر من الاحتيال الإلكتروني
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-card fade-in-up" style="background-color: var(--primary-dark);">
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 80%, var(--accent-orange) 0%, transparent 50%);"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-between">
+                            <div class="flex justify-end">
+                                <div class="text-white text-sm font-bold px-3 py-1 rounded-full" style="background-color: rgba(255,255,255,0.2);">
+                                    SAFE
+                                </div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center my-8">
+                                <div class="relative w-full max-w-xs aspect-square">
+                                    <img src="images/camp2.jpg" alt="Campaign 2" class="campaign-image w-full h-full object-cover rounded-2xl shadow-lg">
+                                    <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(135deg, transparent 0%, rgba(23, 131, 229, 0.3) 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold text-white mb-4 campaign-title" data-en="Phishing Awareness 101" data-ar="الوعي يبدأ منك والأمان علينا">
+                                    Phishing Awareness 101
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campaign-card fade-in-up" style="background-color: var(--primary-medium);">
+                        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20% 80%, var(--primary-light) 0%, transparent 50%);"></div>
+                        <div class="relative z-10 h-full p-8 flex flex-col justify-between">
+                            <div class="flex justify-end">
+                                <div class="text-white text-sm font-bold px-3 py-1 rounded-full" style="background-color: rgba(255,255,255,0.2);">
+                                    SAFE
+                                </div>
+                            </div>
+                            <div class="flex-1 flex items-center justify-center my-8">
+                                <div class="relative w-full max-w-xs aspect-square">
+                                    <img src="images/camp3.jpg" alt="Campaign 3" class="campaign-image w-full h-full object-cover rounded-2xl shadow-lg">
+                                    <div class="absolute inset-0 rounded-2xl" style="background: linear-gradient(135deg, transparent 0%, rgba(23, 131, 229, 0.3) 100%);"></div>
+                                </div>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="text-xl font-bold text-white mb-4 campaign-title" data-en="Your awareness is your shield" data-ar="وعيك هو درعك">
+                                    وعيك هو درعك
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding relative overflow-hidden" style="background-color: var(--light-bg-section);">
+            <!-- Background Glows -->
+            <div class="absolute top-1/4 right-0 w-96 h-96 opacity-15 blur-3xl rounded-full" style="background-color: var(--primary-light);"></div>
+            <div class="absolute bottom-1/4 left-0 w-64 h-64 opacity-20 blur-2xl rounded-full" style="background-color: var(--accent-orange);"></div>
+
+            <div class="container relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 lg:p-16 text-center fade-in-up">
+                        <h2 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl" style="color: var(--neutral-dark);" id="contactTitle">
+                            Get Involved
+                        </h2>
+                        
+                        <p class="mt-6 text-xl max-w-2xl mx-auto leading-relaxed" style="color: var(--neutral-dark); opacity: 0.8;" id="contactSubTitle">
+                            Stay updated with our latest news and campaigns. Join our newsletter to be part of the SAFE community.
+                        </p>
+                        
+                        <form class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-lg mx-auto" onsubmit="handleFormSubmit(event)">
+                            <input type="email" id="emailInput" class="w-full flex-1 rounded-2xl border-2 px-6 py-4 text-lg focus:outline-none transition-colors" style="border-color: var(--primary-light); box-shadow: 0 4px 12px -2px rgba(13, 15, 54, 0.08);">
+                            <button type="submit" class="btn-primary w-full sm:w-auto text-lg">
+                                <span id="contactButton">Subscribe</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4" id="contactArrow"></i>
+                            </button>
+                        </form>
+
+                        <div class="mt-8 pt-8 border-t border-gray-100">
+                            <p class="text-sm text-gray-500" id="communityText">
+                                Join the SAFE community today
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background-color: var(--neutral-dark);" class="text-gray-300">
+        <div class="container py-20">
+            <div class="grid grid-cols-1 gap-12 md:grid-cols-12">
+                
+                <!-- Brand & Title -->
+                <div class="md:col-span-5" id="footerBrand">
+                    <div class="flex items-center gap-2">
+                        <img src="images/icon.png" alt="SAFE Logo" width="40" height="45" class="object-contain">
+                        <span class="text-4xl font-extrabold tracking-tight text-white" style="font-family: 'Montserrat', sans-serif;">SAFE</span>
+                    </div>
+                    <p class="mt-4 text-lg max-w-xs" style="color: var(--primary-light); opacity: 0.9;" id="footerTitle">
+                        Join our mission for a safer digital Egypt.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-3 lg:col-span-2 lg:col-start-7">
+                    <h3 class="text-xl font-semibold text-white" id="footerLinksTitle">Navigate</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li><button onclick="scrollToSection('home')" class="transition-colors duration-300 hover:text-white footer-nav-link">Home</button></li>
+                        <li><button onclick="scrollToSection('about')" class="transition-colors duration-300 hover:text-white footer-nav-link">About</button></li>
+                        <li><button onclick="scrollToSection('brand-kit')" class="transition-colors duration-300 hover:text-white footer-nav-link">Brand Kit</button></li>
+                        <li><button onclick="scrollToSection('campaigns')" class="transition-colors duration-300 hover:text-white footer-nav-link">Campaigns</button></li>
+                        <li><button onclick="scrollToSection('contact')" class="transition-colors duration-300 hover:text-white footer-nav-link">Contact</button></li>
+                    </ul>
+                </div>
+
+                <!-- Socials -->
+                <div class="md:col-span-4 lg:col-span-3 lg:col-start-9">
+                    <h3 class="text-xl font-semibold text-white" id="footerSocialsTitle">Follow Us</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition-colors duration-300 hover:text-white">
+                                <i data-lucide="facebook" class="w-5 h-5"></i>
+                                <span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition-colors duration-300 hover:text-white">
+                                <i data-lucide="instagram" class="w-5 h-5"></i>
+                                <span>Instagram</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 transition-colors duration-300 hover:text-white">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="mt-20 border-t border-gray-700 pt-8 text-center">
+                <p class="text-sm text-gray-400" id="footerRights">
+                    © 2025 SAFE. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language system
+        let currentLanguage = 'en';
+
+        const content = {
+            en: {
+                // Navigation
+                navHome: "Home",
+                navAbout: "About",
+                navKit: "Brand Kit",
+                navCampaigns: "Campaigns",
+                navContact: "Contact",
+                langToggle: "عربي",
+                
+                // Hero Section
+                heroSlogan: "Your Shield in the Digital World.",
+                heroSubSlogan: "Building a safe and aware digital Egyptian community that enjoys trust and knowledge to protect its data and identity.",
+                heroCta: "Explore Our Mission",
+                
+                // About Section
+                purposeTitle: "Our Purpose",
+                purposeSubTitle: "Security & Awareness For Everyone. We are guided by a clear vision, mission, and values.",
+                visionTitle: "Our Vision",
+                visionText: "Building a safe and aware digital Egyptian community.",
+                missionTitle: "Our Mission", 
+                missionText: "Providing innovative, simple content to promote digital safety.",
+                logoStoryTitle: "The Story of Our Logo",
+                logoStoryText1: "Our logo is a fusion of two core concepts: The 'Shield' represents Safety & Security, while the 'Lotus' (a symbol of Egypt) represents our nation.",
+                logoStoryText2: "Together, they form 'Secure Egypt' — or SAFE. It's a symbol of our commitment to protecting our community.",
+                
+                // Brand Kit
+                kitTitle: "Our Brand Kit",
+                kitSubTitle: "Explore the official SAFE merchandise, designed for our community.",
+                
+                // Campaigns
+                campaignTitle: "Our Latest Campaigns",
+                campaignSubTitle: "Follow our awareness campaigns and stay informed.",
+                
+                // Contact
+                contactTitle: "Get Involved",
+                contactSubTitle: "Stay updated with our latest news and campaigns. Join our newsletter to be part of the SAFE community.",
+                contactPlaceholder: "Enter your email",
+                contactButton: "Subscribe",
+                communityText: "Join the SAFE community today",
+                
+                // Footer
+                footerTitle: "Join our mission for a safer digital Egypt.",
+                footerLinksTitle: "Navigate",
+                footerSocialsTitle: "Follow Us",
+                footerRights: "© 2025 SAFE. All rights reserved."
+            },
+            ar: {
+                // Navigation
+                navHome: "الرئيسية",
+                navAbout: "عن المبادرة",
+                navKit: "الهوية التجارية", 
+                navCampaigns: "الحملات",
+                navContact: "تواصل معنا",
+                langToggle: "EN",
+                
+                // Hero Section
+                heroSlogan: "درعك في العالم الرقمي.",
+                heroSubSlogan: "بناء مجتمع مصري رقمي آمن وواعي يتمتع بالثقة والمعرفة لحماية بياناته وهويته.",
+                heroCta: "اكتشف مهمتنا",
+                
+                // About Section
+                purposeTitle: "هدفنا",
+                purposeSubTitle: "الأمان والوعي للجميع. نحن نسترشد برؤية ورسالة وقيم واضحة.",
+                visionTitle: "رؤيتنا",
+                visionText: "بناء مجتمع مصري رقمي آمن وواعي.",
+                missionTitle: "مهمتنا",
+                missionText: "تقديم محتوى مبتكر وبسيط لتعزيز الأمان الرقمي.",
+                logoStoryTitle: "قصة شعارنا",
+                logoStoryText1: "شعارنا هو دمج لمفهومين أساسيين: 'الدرع' يمثل الأمان والحماية، و'زهرة اللوتس' (رمز مصر) تمثل وطننا.",
+                logoStoryText2: "معًا، يشكلان 'مصر الآمنة' - أو SAFE. إنه رمز لالتزامنا بحماية مجتمعنا.",
+                
+                // Brand Kit
+                kitTitle: "هويتنا التجارية",
+                kitSubTitle: "اكتشف منتجات SAFE الرسمية، المصممة لمجتمعنا.",
+                
+                // Campaigns
+                campaignTitle: "أحدث حملاتنا",
+                campaignSubTitle: "تابع حملاتنا التوعوية وكن على اطلاع.",
+                
+                // Contact
+                contactTitle: "شارك معنا",
+                contactSubTitle: "ابق على اطلاع بآخر أخبارنا وحملاتنا. انضم إلى نشرتنا الإخبارية لتكون جزءًا من مجتمع SAFE.",
+                contactPlaceholder: "أدخل بريدك الإلكتروني",
+                contactButton: "اشتراك",
+                communityText: "انضم إلى مجتمع SAFE اليوم",
+                
+                // Footer
+                footerTitle: "انضم لمهمتنا من أجل مصر رقمية آمنة",
+                footerLinksTitle: "تصفح",
+                footerSocialsTitle: "تابعنا", 
+                footerRights: "© 2025 SAFE. جميع الحقوق محفوظة."
+            }
+        };
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Scroll progress bar
+        function updateScrollProgress() {
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (scrollTop / scrollHeight) * 100;
+            
+            const progressBar = document.getElementById('scrollProgress');
+            progressBar.style.transform = `scaleX(${scrolled / 100})`;
+        }
+
+        // Smooth scroll to section
+        function scrollToSection(sectionId) {
+            const element = document.getElementById(sectionId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            const isRtl = document.documentElement.dir === 'rtl';
+            
+            if (mobileMenu.classList.contains('js-hidden')) {
+                mobileMenu.classList.remove('js-hidden');
+                if (isRtl) {
+                    mobileMenu.classList.add('rtl');
+                }
+                setTimeout(() => {
+                    mobileMenu.classList.add('open');
+                }, 10);
+            } else {
+                mobileMenu.classList.remove('open');
+                setTimeout(() => {
+                    mobileMenu.classList.add('js-hidden');
+                    mobileMenu.classList.remove('rtl');
+                }, 400);
+            }
+        }
+
+        // Toggle language
+        function toggleLanguage() {
+            currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+            updateContent();
+            updateDirection();
+        }
+
+        // Update content based on language
+        function updateContent() {
+            const lang = content[currentLanguage];
+            
+            // Update text content
+            Object.keys(lang).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    element.textContent = lang[key];
+                }
+            });
+
+            // Update navigation items
+            const navTexts = document.querySelectorAll('.nav-text');
+            const mobileNavTexts = document.querySelectorAll('.mobile-nav-text');
+            const footerNavLinks = document.querySelectorAll('.footer-nav-link');
+
+            navTexts.forEach((text, index) => {
+                const navKeys = ['navHome', 'navAbout', 'navKit', 'navCampaigns', 'navContact'];
+                if (navKeys[index]) {
+                    text.textContent = lang[navKeys[index]];
+                }
+            });
+
+            mobileNavTexts.forEach((text, index) => {
+                const navKeys = ['navHome', 'navAbout', 'navKit', 'navCampaigns', 'navContact'];
+                if (navKeys[index]) {
+                    text.textContent = lang[navKeys[index]];
+                }
+            });
+
+            footerNavLinks.forEach((link, index) => {
+                const navKeys = ['navHome', 'navAbout', 'navKit', 'navCampaigns', 'navContact'];
+                if (navKeys[index]) {
+                    link.textContent = lang[navKeys[index]];
+                }
+            });
+
+            // Update kit item names
+            const kitItems = document.querySelectorAll('.kit-item-name');
+            kitItems.forEach(item => {
+                const arText = item.getAttribute('data-ar');
+                const enText = item.getAttribute('data-en');
+                item.textContent = currentLanguage === 'ar' ? arText : enText;
+            });
+
+            // Update campaign titles
+            const campaignTitles = document.querySelectorAll('.campaign-title');
+            campaignTitles.forEach(title => {
+                const arText = title.getAttribute('data-ar');
+                const enText = title.getAttribute('data-en');
+                title.textContent = currentLanguage === 'ar' ? arText : enText;
+            });
+
+            // Update email placeholder
+            const emailInput = document.getElementById('emailInput');
+            if (emailInput) {
+                emailInput.placeholder = lang.contactPlaceholder;
+            }
+        }
+
+        // Update direction and styling based on language
+        function updateDirection() {
+            const html = document.documentElement;
+            const body = document.body;
+            const isArabic = currentLanguage === 'ar';
+            
+            html.setAttribute('dir', isArabic ? 'rtl' : 'ltr');
+            html.setAttribute('lang', currentLanguage);
+            
+            if (isArabic) {
+                body.style.fontFamily = "'Cairo', 'Droid Arabic Kufi', sans-serif";
+                body.classList.add('arabic-text');
+            } else {
+                body.style.fontFamily = "'Montserrat', sans-serif";
+                body.classList.remove('arabic-text');
+            }
+
+            // Update progress bar transform origin
+            const progressBar = document.getElementById('scrollProgress');
+            if (progressBar) {
+                progressBar.classList.toggle('rtl', isArabic);
+            }
+
+            // Update hero content order and alignment
+            const heroContent = document.getElementById('heroContent');
+            const heroLogo = document.getElementById('heroLogo');
+            
+            if (isArabic) {
+                heroContent.style.order = '2';
+                heroContent.style.textAlign = 'right';
+                heroContent.style.direction = 'rtl';
+                heroLogo.style.order = '1';
+                
+                // Update hero text size for Arabic
+                const heroSlogan = document.getElementById('heroSlogan');
+                if (heroSlogan && heroSlogan.parentElement) {
+                    heroSlogan.parentElement.style.fontSize = 'clamp(2.8rem, 8vw, 4.5rem)';
+                }
+
+                // Rotate arrow for RTL
+                const heroArrow = document.getElementById('heroArrow');
+                if (heroArrow) {
+                    heroArrow.style.transform = 'rotate(180deg)';
+                }
+
+                const contactArrow = document.getElementById('contactArrow');
+                if (contactArrow) {
+                    contactArrow.style.transform = 'rotate(180deg)';
+                }
+            } else {
+                heroContent.style.order = '1';
+                heroContent.style.textAlign = 'left';
+                heroContent.style.direction = 'ltr';
+                heroLogo.style.order = '2';
+                
+                // Reset hero text size for English
+                const heroSlogan = document.getElementById('heroSlogan');
+                if (heroSlogan && heroSlogan.parentElement) {
+                    heroSlogan.parentElement.style.fontSize = 'clamp(3.5rem, 10vw, 5.5rem)';
+                }
+
+                // Reset arrow rotation
+                const heroArrow = document.getElementById('heroArrow');
+                if (heroArrow) {
+                    heroArrow.style.transform = 'rotate(0deg)';
+                }
+
+                const contactArrow = document.getElementById('contactArrow');
+                if (contactArrow) {
+                    contactArrow.style.transform = 'rotate(0deg)';
+                }
+            }
+
+            // Update logo story content order
+            const logoStoryContent = document.getElementById('logoStoryContent');
+            if (logoStoryContent) {
+                if (isArabic) {
+                    logoStoryContent.classList.add('md:order-first');
+                } else {
+                    logoStoryContent.classList.remove('md:order-first');
+                }
+            }
+        }
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('emailInput').value;
+            if (email) {
+                alert(currentLanguage === 'ar' ? 
+                    'شكرًا لك! تم تسجيل بريدك الإلكتروني بنجاح.' : 
+                    'Thank you! Your email has been registered successfully.'
+                );
+                document.getElementById('emailInput').value = '';
+            }
+        }
+
+        // Intersection Observer for animations
+        function initScrollAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize icons
+            lucide.createIcons();
+            
+            // Initialize scroll animations
+            initScrollAnimations();
+            
+            // Initialize content
+            updateContent();
+            updateDirection();
+            
+            // Add scroll event listener
+            window.addEventListener('scroll', updateScrollProgress);
+            
+            // Add resize listener to re-initialize icons if needed
+            window.addEventListener('resize', () => {
+                lucide.createIcons();
+            });
+        });
+
+        // Add click handlers for campaign cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const campaignCards = document.querySelectorAll('.campaign-card');
+            campaignCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    // Add a click effect or navigate to campaign details
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
