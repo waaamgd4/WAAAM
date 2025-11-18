@@ -1,9 +1,14 @@
-<p align="center">
-<img src="https://placehold.co/800x200/1e3a8a/60a5fa?text=SAFE+-+Security+and+Awareness+For+Everyone" alt="SAFE Project Banner">
-</p>
 
-<h3 align="center">Security and Awareness For Everyone</h3>
-<h4 align="center">Building a Safe and Aware Digital Egyptian Community</h4>
+<h2 align="center">Security and Awareness For Everyone</h2>
+<h3 align="center">Building a Safe and Aware Digital Egyptian Community</h3>
+
+<p align="center">
+<img src="https://github.com/user-attachments/assets/7cd61ed5-117f-4d0b-9368-4861dc0bfe02" alt="SAFE Project Banner">
+</p>
+ 
+
+
+
 
 <p align="center">
   <a href="https://www.behance.net/W99_"><img src="https://img.shields.io/badge/Behance-Portfolio-1769ff?style=for-the-badge&logo=behance" alt="Behance"></a>
@@ -29,8 +34,10 @@
 ## 🛡️ About
 
 <p align="center">
-<img src="https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif" width="400" alt="Cybersecurity GIF">
+<img src="https://github.com/user-attachments/assets/57597f9c-b9b4-43f6-8554-1071161a1ad2" width="400" alt="Cybersecurity GIF">
 </p>
+ 
+
 
 Dedicated to educating and empowering individuals and businesses to protect themselves in an increasingly digital environment. As online activity grows in Egypt, so do the risks of cybercrimes such as fraud, identity theft, and cyberbullying. 
 
@@ -78,10 +85,11 @@ Digital safety is a shared responsibility. SAFE will partner with companies, sch
 
 ---
 
+
 ## 🎯 Project Objectives
 
 <p align="center">
-<img src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" width="400" alt="Security GIF">
+<img src="https://github.com/user-attachments/assets/6b9f286c-2bcc-45f0-9cd1-168af2cca417" width="400" alt="Security GIF">
 </p>
 
 The goal of SAFE is to build a secure and informed digital environment by combining impactful safety education with practical cybersecurity support. The organization aims to:
