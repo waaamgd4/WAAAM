@@ -1,5 +1,5 @@
 
-<h2 align="center">Security and Awareness For Everyone</h2>
+<h1 align="center">Security and Awareness For Everyone</h1>
 <h3 align="center">Building a Safe and Aware Digital Egyptian Community</h3>
 
 <p align="center">
@@ -123,7 +123,7 @@ The goal of SAFE is to build a secure and informed digital environment by combin
 - **Mariam Mahmoud Fouad**
 - **Abeer Talaat Muhammad**
 - **Ahmed Ibrahim Elawady**
-- **Fatimah Mohamed Emad**
+- **Fatimah Mohamed Emad Eldin**
 
 </details>
 
