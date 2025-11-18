@@ -3,11 +3,11 @@
 <h3 align="center">Building a Safe and Aware Digital Egyptian Community</h3>
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/7cd61ed5-117f-4d0b-9368-4861dc0bfe02" alt="SAFE Project Banner">
+<img src="https://github.com/user-attachments/assets/d4d5f38e-eaa2-479c-b8db-60a2a2143fd8" alt="SAFE Project Banner">
 </p>
  
 
-
+ 
 
 
 <p align="center">
