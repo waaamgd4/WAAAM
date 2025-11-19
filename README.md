@@ -24,7 +24,7 @@
 - [Vision & Mission](#-vision--mission)
 - [Core Values](#-core-values)
 - [Project Objectives](#-project-objectives)
-- [Resources](#-resources)
+- [Our Project](#-our-project)
 - [Team](#-team)
 - [Connect With Us](#-connect-with-us)
 
