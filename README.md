@@ -10,7 +10,7 @@
 
 
 <p align="center">
-  <a href="https://www.behance.net/W99_"><img src="https://img.shields.io/badge/Behance-Portfolio-1769ff?style=for-the-badge&logo=behance" alt="Behance"></a>
+  <a href="https://www.behance.net/gallery/239476601/Safe-Security-Awareness-For-Everyone"><img src="https://img.shields.io/badge/Behance-Portfolio-1769ff?style=for-the-badge&logo=behance" alt="Behance"></a>
   <a href="https://indd.adobe.com/view/74c407a6-33c0-4970-9f35-33f0071eb5e8"><img src="https://img.shields.io/badge/InDesign-Landing_Page-FF3366?style=for-the-badge&logo=adobeindesign" alt="Landing Page"></a>
   <a href="https://drive.google.com/drive/folders/11K6IZsE91F843MpA2qoehfv9A-C4mm2s"><img src="https://img.shields.io/badge/Drive-Brand_Guidelines-4285F4?style=for-the-badge&logo=googledrive" alt="Brand Guidelines"></a>
   <a href="https://drive.google.com/drive/folders/1KU_U-kuFaWDpbmYMfko_nJkbbs_X1UF2"><img src="https://img.shields.io/badge/Drive-Campaigns-34A853?style=for-the-badge&logo=googledrive" alt="Social Campaigns"></a>
@@ -38,7 +38,7 @@
  
 
 
-Dedicated to educating and empowering individuals and businesses to protect themselves in an increasingly digital environment. As online activity grows in Egypt, so do the risks of cybercrimes such as fraud, identity theft, and cyberbullying. 
+SAFE is an organization dedicated to educating and empowering individuals and businesses to protect themselves in an increasingly digital environment. As online activity grows in Egypt, so do the risks of cybercrimes such as fraud, identity theft, and cyberbullying. 
 
 SAFE uses creative graphic design, engaging content, and clear messaging to simplify complex cybersecurity concepts and raise awareness about the importance of safe online practices. It also promotes digital awareness in the AI era, helping people stay informed as technology evolves. 
 
@@ -108,7 +108,7 @@ The goal of SAFE is to build a secure and informed digital environment by combin
 | 🎨 **Brand Guidelines** | Complete visual identity and design system | [View on Drive](https://drive.google.com/drive/folders/11K6IZsE91F843MpA2qoehfv9A-C4mm2s) |
 | 🌐 **Landing Page** | Interactive project presentation | [View on InDesign](https://indd.adobe.com/view/74c407a6-33c0-4970-9f35-33f0071eb5e8) |
 | 📱 **Social Media Campaigns** | Marketing and awareness content | [View on Drive](https://drive.google.com/drive/folders/1KU_U-kuFaWDpbmYMfko_nJkbbs_X1UF2) |
-| 💼 **Behance** | Complete design showcase | [View on Behance](https://www.behance.net/W99_) |
+| 💼 **Behance** | Complete design showcase | [View on Behance](https://www.behance.net/gallery/239476601/Safe-Security-Awareness-For-Everyone) |
 
 ---
 
@@ -132,7 +132,7 @@ The goal of SAFE is to build a secure and informed digital environment by combin
 ## 🔗 Connect With Us
 
 <p align="center">
-<a href="https://www.behance.net/W99_"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white" alt="Behance"></a>
+<a href="https://www.behance.net/gallery/239476601/Safe-Security-Awareness-For-Everyone"><img src="https://img.shields.io/badge/Behance-1769ff?style=for-the-badge&logo=behance&logoColor=white" alt="Behance"></a>
 </p>
 
 ---
