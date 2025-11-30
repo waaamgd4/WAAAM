@@ -109,7 +109,7 @@ The goal of SAFE is to build a secure and informed digital environment by combin
 | 🌐 **Landing Page** | Interactive project Website | [View on InDesign](https://indd.adobe.com/view/74c407a6-33c0-4970-9f35-33f0071eb5e8) |
 | 📱 **Social Media Campaigns** | Marketing and awareness content | [View on Drive](https://drive.google.com/drive/folders/1KU_U-kuFaWDpbmYMfko_nJkbbs_X1UF2) |
 | 💼 **Behance** | Complete design showcase | [View on Behance](https://www.behance.net/gallery/239476601/Safe-Security-Awareness-For-Everyone) |
-| 💼 **Presentation** | Project Presentation | [View on Drive](https://drive.google.com/drive/folders/13UsSHlYEuf-CTxtks0N6aGuNQOmH71yS?usp=sharing) |
+| 🎬 **Presentation** | Project Presentation | [View on Drive](https://drive.google.com/drive/folders/13UsSHlYEuf-CTxtks0N6aGuNQOmH71yS?usp=sharing) |
 
 ---
 
