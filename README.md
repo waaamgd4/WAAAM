@@ -14,6 +14,7 @@
   <a href="https://indd.adobe.com/view/74c407a6-33c0-4970-9f35-33f0071eb5e8"><img src="https://img.shields.io/badge/InDesign-Landing_Page-FF3366?style=for-the-badge&logo=adobeindesign" alt="Landing Page"></a>
   <a href="https://drive.google.com/drive/folders/11K6IZsE91F843MpA2qoehfv9A-C4mm2s"><img src="https://img.shields.io/badge/Drive-Brand_Guidelines-4285F4?style=for-the-badge&logo=googledrive" alt="Brand Guidelines"></a>
   <a href="https://drive.google.com/drive/folders/1KU_U-kuFaWDpbmYMfko_nJkbbs_X1UF2"><img src="https://img.shields.io/badge/Drive-Campaigns-34A853?style=for-the-badge&logo=googledrive" alt="Social Campaigns"></a>
+   <a href="https://drive.google.com/drive/folders/13UsSHlYEuf-CTxtks0N6aGuNQOmH71yS?usp=sharing"><img src="https://img.shields.io/badge/Drive-Campaigns-34A853?style=for-the-badge&logo=googledrive" alt="Project Documentation"></a>
 </p>
 
 ---
